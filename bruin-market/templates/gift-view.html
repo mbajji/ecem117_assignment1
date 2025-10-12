@@ -1,9 +1,17 @@
 {% extends 'base.html' %} {% block title %}View Gift{% endblock %} {% block
 content %}
+<meta http-equiv="Content-Security-Policy" 
+content="default-src 'none'; 
+         style-src 'self'; 
+         script-src 'self'; 
+         img-src 'self';
+         connect-src 'self';">
 <h1>View Gift</h1>
 <span>
   <strong>Message:</strong>
-  <p>{{ gift.note | safe}}</p>
+  <!-- <p>{{ gift.note | safe}}</p> -->
+  <p>{{ gift.note }}
 </span>
-<div id="code" value="{{ gift.code }}">Code: {{ gift.code }}</div>
+<!-- <div id="code" value="{{ gift.code }}">Code: {{ gift.code }}</div> -->
+<div id="code">Code: {{ gift.code }}</div>
 {% endblock %}
