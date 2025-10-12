@@ -14,9 +14,15 @@ def transfer():
     receiver_username = ""
     amount = ""
 
+    #prevent csrf 
+    if request.content_type != "application/json":
+        res["status"] = "Unauthorized."
+        return jsonify(res), 400
     if request.content_type == "application/x-www-form-urlencoded":
         receiver_username = request.form.get("receiver")
         amount = request.form.get("amount")
+        #changing this to be 0 
+        #amount = "0" #this works 
     else:
         data = request.json
         receiver_username = data.get("receiver")
