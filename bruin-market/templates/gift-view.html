@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {%block csp%} 
 <meta http-equiv="Content-Security-Policy" 
-content="default-src 'self'; 
+content="default-src 'self';
+        script-src 'self';
          style-src 'self' https://fonts.googleapis.com; 
          font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
          img-src 'self' data:;">
@@ -16,7 +17,7 @@ content %}
 <h1>View Gift</h1>
 <span>
   <strong>Message:</strong>
-  <p>{{ gift.note | safe}}
+  <p>{{ gift.note | safe}} </p>
 </span>
 <div id="code" value="{{ gift.code }}">Code: {{ gift.code }}</div>
 {% endblock %}
