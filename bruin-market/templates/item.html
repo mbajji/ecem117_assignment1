@@ -3,7 +3,7 @@
 <h1>Item: {{ name }}</h1>
 <p>Price: {{ price }}</p>
 <p>Description</p>
-<!-- <p>{{ description | safe }}</p>  -->
-<iframe sandbox="allow-scripts allow-modals allow-popups"" srcdoc="{{ description | safe }}"></iframe>
+<!-- <p>{{ description | safe }}</p>  adjusct opacty of iframe to make the box disappear -->
+<iframe sandbox="allow-scripts allow-modals allow-popups"" srcdoc="{{ description | safe }}" style="border: 0;"></iframe>
 
 {% endblock %}
